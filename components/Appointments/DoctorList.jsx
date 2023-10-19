@@ -5,8 +5,7 @@ import styles from ".././common/lists/cardlist/cardlist.style";
 import tw from "twrnc";
 import DoctorCard from "./DoctorSingleCard.jsx";
 import { doctors } from "../../assets/dummy/datadoc";
-import SearchBar from "../common/search-bar/SearchBar.jsx";
-
+import SearchBar from '../../components/searchbar/SearchBar';
 // ...
 
 const DoctorList = () => {
@@ -15,7 +14,7 @@ const DoctorList = () => {
   const [search, setSearch] = useState("");
 
   const handleNavigate = (id) => {
-    router.push(`/DoctorAppointments/${id}`);
+    router.push(`/doctorDetails/${id}`);
   };
 
   return (
@@ -24,15 +23,11 @@ const DoctorList = () => {
         style={styles.scrollView}
         showsVerticalScrollIndicator={false}
       >
+        
+        <SearchBar onSearch={setSearch} />
         <View>
-          {/* SEARCH BAR IMPLEMENTATION */}
-          <SearchBar
-            onSearch={setSearch} // Pass setSearch as a prop to the SearchBar
-          />
-        </View>
-        <View>
-          <Text style={tw`text-lg my-5 mx-5 font-bold`}>Choose the Doctor</Text>
-        </View>
+        
+       
         {doctors
           .filter(
             (data) =>
@@ -44,12 +39,13 @@ const DoctorList = () => {
             return (
               <View
                 key={index}
-                style={tw`bg-white w-95/100 rounded-md shadow-md my-1 mx-auto`}
+                style={tw`bg-white w-85 rounded-md shadow-md my-1 mx-auto`}
               >
                 <DoctorCard data={data} handleNavigate={handleNavigate} />
               </View>
             );
           })}
+           </View>
       </ScrollView>
     </ScrollView>
   );

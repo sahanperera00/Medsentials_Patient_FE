@@ -28,14 +28,16 @@ import React from "react";
 import tw from "twrnc";
 import DoctorList from "../../../components/Appointments/DoctorList";
 import ExpoStatusBar from "expo-status-bar/build/ExpoStatusBar";
+import SearchBar from '../../../components/searchbar/SearchBar';
 
 export default function Home() {
   return (
-    <View >
-      <View style={tw`h-10`} />
-      <ExpoStatusBar style="dark" />
-      {/* <Text style={tw`text-4xl text-center font-bold my-2`}>Home</Text> */}
-      <DoctorList />
-    </View>
+    
+
+<View style={tw`flex-1 items-center mt-18`}>
+<Text style={tw`text-3xl text-center font-bold`}>Choose Your Doctor</Text>
+
+<DoctorList />
+</View>
   );
 }
