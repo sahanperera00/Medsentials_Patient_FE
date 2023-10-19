@@ -10,7 +10,6 @@ const styles = StyleSheet.create({
     flex: 1,
     borderRadius: 10,
     shadowColor: COLORS.white,
-    backgroundColor: COLORS.white,
     paddingVertical: SIZES.medium,
     marginVertical: -10,
     height: 610,

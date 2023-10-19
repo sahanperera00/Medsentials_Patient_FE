@@ -1,47 +1,36 @@
-import { StyleSheet } from "react-native";
-
-import { COLORS, SHADOWS, SIZES } from "../../../constants";
+import { StyleSheet } from 'react-native';
+import { COLORS, SHADOWS, SIZES } from '../../../constants'; // Update the path to your constants
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "space-between",
-    alignItems: "center",
-    flexDirection: "row",
+    flexDirection: 'row',
     padding: SIZES.small,
     borderRadius: SIZES.small,
-    backgroundColor: "#fff",
+    backgroundColor: '#f3eef5',
     ...SHADOWS.medium,
     shadowColor: COLORS.white,
-    // Adjust the width as needed
+    alignItems: 'center',
   },
-  
-  logoContainer: {
-    width: 50,
-    height: 50,
-    backgroundColor: COLORS.white,
-    borderRadius: SIZES.medium,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  logImage: {
-    width: "70%",
-    height: "70%",
+  doctorImage: {
+    width: 100, // Adjust the width for your image
+    height: 100, // Adjust the height for your image
+    borderRadius: 40, // To make it a circular image
+    marginRight: 10, // Add spacing between the image and text
   },
   textContainer: {
     flex: 1,
     marginHorizontal: SIZES.medium,
   },
   jobName: {
-    fontSize: SIZES.medium,
+    fontSize: 18,
     color: COLORS.primary,
   },
   jobType: {
     fontSize: SIZES.small + 2,
-    
     color: COLORS.gray,
     marginTop: 3,
-    textTransform: "capitalize",
+    textTransform: 'capitalize',
   },
 });
 
