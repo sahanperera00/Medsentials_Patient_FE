@@ -54,7 +54,7 @@ const chatsData = [
 export default function chats() {
   
   return (
-    <View style={tw`flex-1 items-center mt-12`}>
+    <View style={tw`flex-1 items-center mt-18`}>
       <Text style={tw`text-3xl text-center font-bold`}>My Chats</Text>
       <SearchBar />
       <ChatList chats={chatsData} onPressChat={undefined} />
