@@ -6,7 +6,7 @@ import DoctorList from "../../../components/Appointments/DoctorList";
 const Doctors = () => {
   return (
     <View style={{ flex: 1 }}>
-      <DoctorList />
+      {/* <DoctorList /> */}
     </View>
   );
 };

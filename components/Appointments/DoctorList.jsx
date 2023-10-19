@@ -31,7 +31,7 @@ const DoctorList = () => {
           />
         </View>
         <View>
-          <Text style={tw`text-lg my-5 mx-5 font-bold`}>Doctors</Text>
+          <Text style={tw`text-lg my-5 mx-5 font-bold`}>Choose the Doctor</Text>
         </View>
         {doctors
           .filter(
