@@ -30,7 +30,7 @@ import DoctorList from "../../../components/Appointments/DoctorList";
 import ExpoStatusBar from "expo-status-bar/build/ExpoStatusBar";
 import SearchBar from '../../../components/searchbar/SearchBar';
 
-export default function Home() {
+export default function home() {
   return (
     
 

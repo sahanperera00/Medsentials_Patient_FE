@@ -3,38 +3,35 @@ import { useRouter } from "expo-router";
 import React, { useState } from "react";
 import styles from ".././common/lists/cardlist/cardlist.style";
 import tw from "twrnc";
-import DoctorCard from "./DoctorSingleCard.jsx";
-import { doctors } from "../../assets/dummy/datadoc";
+import AppointmentCard from "./AppointmentSingleCard.jsx";
+import { appointments } from "../../assets/dummy/appointments";
 import SearchBar from '../../components/searchbar/SearchBar';
 // ...
 
-const DoctorList = () => {
+const AppointmentList = () => {
   const router = useRouter();
 
   const [search, setSearch] = useState("");
 
-  const handleNavigate = (id) => {
-    router.push(`/doctorDetails/${id}`);
-  };
+  
 
   return (
     <ScrollView stickyHeaderHiddenOnScroll={4}>
-      
       <SearchBar onSearch={setSearch} />
       <ScrollView
         style={styles.scrollView}
         showsVerticalScrollIndicator={false}
       >
         
+        
         <View>
         
        
-        {doctors
+        {appointments
           .filter(
             (data) =>
-              data.name.includes(search) ||
-              data.specialization.includes(search) ||
-              data.location.includes(search)
+              data.doctorName.includes(search) 
+             
           )
           .map((data, index) => {
             return (
@@ -42,7 +39,7 @@ const DoctorList = () => {
                 key={index}
                 style={tw` w-85 rounded-md shadow-md my-1 mx-auto`}
               >
-                <DoctorCard data={data} handleNavigate={handleNavigate} />
+                <AppointmentCard data={data}  />
               </View>
             );
           })}
@@ -54,4 +51,4 @@ const DoctorList = () => {
 
 // ...
 
-export default DoctorList;
+export default AppointmentList;
