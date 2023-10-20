@@ -1,5 +1,5 @@
 import { View, Text, TouchableOpacity } from 'react-native';
-import styles from './single-card.style';
+import styles from '../../Appointments/DoctorSingleCard.style';
 import tw from 'twrnc';
 import { Badge } from '../badge/Badge';
 
