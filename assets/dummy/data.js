@@ -59,7 +59,7 @@ export const prescriptions = [
         total: 4000
     },
     {
-        _id: 'pres-001',
+        _id: 'pres-007',
         patient: 'Rebecca Kulanayagam',
         doctor: 'Devindu Samarasinghe',
         date: '2021-10-10',

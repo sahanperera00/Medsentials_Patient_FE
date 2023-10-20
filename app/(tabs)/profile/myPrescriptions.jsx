@@ -8,9 +8,9 @@ import PrescriptionCard from '../../../components/prescriptions/PrescriptionCard
 
 const MyPrescriptions = () => {
 
-  const [searchData, setSearchData] = useState();
+  const [searchData, setSearchData] = useState('');
   const router = useRouter();
-
+  
   const [pres, setPres] = useState([]);
 
   const getPrescriptions = () => {
@@ -19,13 +19,14 @@ const MyPrescriptions = () => {
   }
 
 
+
   useEffect(() => {
     getPrescriptions();
     console.log(pres);
   }, [])
 
   return (
-    <ScrollView style={tw`flex-1 mt-10 mb-28`}>
+    <ScrollView keyboardShouldPersistTaps='always' style={tw`flex-1 mt-10 mb-28`}>
       <View style={tw`flex-1 ml-5 mt-10`}>
         <Text style={tw`text-3xl font-bold`}>
           Your Prescriptions
@@ -38,8 +39,13 @@ const MyPrescriptions = () => {
       </View>
 
       <ScrollView style={tw`mx-4 mt-5`}>
-        {pres.map((prescription, index) => {
-          console.log(prescription);
+        {pres.filter((data)=>{
+          if(searchData === ''){
+            return data;
+          }else if(data?._id.toString().toLowerCase()?.includes(searchData?.toLowerCase())){
+            return data;
+          }
+        }).map((prescription, index) => {
           return (
             <View key={index} style={tw`bg-white w-100/100 rounded-xl shadow-sm my-1 mx-auto`}>
               <PrescriptionCard data={prescription} handleTap={() => router.push(`/profile/prescriptionDetails/${prescription._id}`)} />
