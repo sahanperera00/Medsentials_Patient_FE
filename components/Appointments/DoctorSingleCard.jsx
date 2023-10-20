@@ -1,5 +1,5 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
-import styles from "../common/item-cards/single-card.style";
+import styles from "./DoctorSingleCard.style";
 import tw from "twrnc";
 
 const DoctorCard = ({ data, handleNavigate }) => {
