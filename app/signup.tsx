@@ -71,5 +71,6 @@ export default function signup() {
         Already have an account? <Link href="login">Log in</Link>
       </Text>
     </KeyboardAvoidingView>
+    </KeyboardAvoidingView>
   );
 }

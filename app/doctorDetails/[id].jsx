@@ -21,7 +21,7 @@ const DoctorDetails = () => {
     setDoctorDetails(findDoctorDetails(params.id));
   }, []);
 
-  console.log(DoctorDetails);
+  // console.log(DoctorDetails);
 
   return (
     <SafeAreaView>

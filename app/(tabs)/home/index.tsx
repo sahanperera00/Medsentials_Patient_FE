@@ -6,6 +6,7 @@ import ExpoStatusBar from "expo-status-bar/build/ExpoStatusBar";
 import DoctorList from "../../../components/Appointments/DoctorList";
 
 export default function home() {
+export default function home() {
   return (
     <View style={tw`flex-1 items-center px-5`}>
       <View style={tw`h-30`} />
