@@ -7,12 +7,12 @@ export default function deliveryOptionCard({ type, selected, onSelect }) {
   const iconColor = selected ? "#7e57c2" : "white";
 
   return (
-    <TouchableOpacity
+    <View
       style={[
         tw`w-full h-25 flex items-center flex-row gap-5 rounded-2xl overflow-hidden mb-5`,
         selected ? tw`bg-[#7e57c2]` : tw`bg-[#f1eef7]`,
       ]}
-      onPress={() => onSelect(type)}
+      onTouchStart={() => onSelect(type)}
     >
       <View
         style={[
@@ -41,6 +41,6 @@ export default function deliveryOptionCard({ type, selected, onSelect }) {
             : "You can pick up your order at a time that is suitable for you"}
         </Text>
       </View>
-    </TouchableOpacity>
+    </View>
   );
 }

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import tw from "twrnc";
 import MapView, { Marker } from "react-native-maps";
 import * as Location from "expo-location";
-import { pharmacies } from "../assets/dummy/pharmacy";
+import { pharmacies } from "../assets/dummy/pharmacies";
 import { router } from "expo-router";
 
 export default function locatePharmacy() {
