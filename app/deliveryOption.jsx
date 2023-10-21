@@ -45,6 +45,7 @@ export default function deliveryOption() {
         onPress={() => {
           router.push("/locatePharmacy");
         }}
+        disabled={!selectedOption}
       />
     </View>
   );
