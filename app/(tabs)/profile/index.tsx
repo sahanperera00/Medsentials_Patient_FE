@@ -26,18 +26,20 @@ export default function profile() {
           </Text>
         </View>
         <View style={tw`flex-1 flex-col w-full gap-5`}>
-          <Button text="Edit Profile" onPress={null} />
+          <Button text="Edit Profile" onPress={null} style={tw`py-5`} />
           <Button
             text="My Prescriptions"
             onPress={() => {
               router.push("/profile/myPrescriptions");
             }}
+            style={tw`py-5`}
           />
           <Button
             text="My Orders"
             onPress={() => {
               router.push("/profile/myOrders");
             }}
+            style={tw`py-5`}
           />
           <Button
             text="Logout"
@@ -45,6 +47,7 @@ export default function profile() {
               FIREBASE_AUTH.signOut();
               router.push("/login");
             }}
+            style={tw`py-5`}
           />
           <Text style={tw`text-center text-gray-400 mb-50`}>
             Powered by Code Crusaders
