@@ -5,6 +5,7 @@ import ProfilePicture from "../../../components/profilePicture/ProfilePicture";
 import Button from "../../../components/button/Button";
 import { router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { FIREBASE_AUTH } from "../../../FirebaseConfig";
 
 export default function profile() {
   return (
@@ -41,6 +42,7 @@ export default function profile() {
           <Button
             text="Logout"
             onPress={() => {
+              FIREBASE_AUTH.signOut();
               router.push("/login");
             }}
           />
