@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/Foundation';
 import { useEffect, useState } from 'react';
 import { COLORS } from '../../constants/theme';
 import tw from 'twrnc';
-import Button from '../../components/button/Button';
+import Button1 from '../../components/button/Button1';
 
 const DoctorDetails = () => {
   // Getting the params
@@ -35,15 +35,15 @@ const DoctorDetails = () => {
         }}
       />
 
-      <View style={tw`mt-8`}>
+      <View style={tw`mt-10`}>
         <Text style={tw`text-3xl text-center font-bold`}>Doctor Details</Text>
 
         <View
           style={{
             flexDirection: 'row',
             justifyContent: 'center',
-            paddingTop: 50,
-            paddingRight: 10,
+            paddingTop: 30,
+            paddingRigh: 10,
             width: 'auto',
           }}
         >
@@ -60,7 +60,7 @@ const DoctorDetails = () => {
               {DoctorDetails.specialization}
             </Text>
             <View style={tw`mt-2 flex items-center justify-center`}>
-              <Button
+              <Button1
                 text="Set Appointment"
                 onPress={() => {
                   router.push('/selectDateAndTime');
@@ -75,7 +75,7 @@ const DoctorDetails = () => {
           <Text style={tw`text-lg`}> About </Text>
           <View
             style={[
-              tw`bg-stone-300 rounded-lg mr-8 p-5 mt-2 `,
+              tw`bg-stone-200 rounded-lg mr-8 p-5 mt-2 `,
               Platform.OS === 'android' && { elevation: 1 },
             ]}
           >
@@ -85,7 +85,7 @@ const DoctorDetails = () => {
           </View>
         </View>
 
-        <View style={tw`ml-6 mt-10 mb-10`}>
+        <View style={tw`ml-6 mt-5 mb-1`}>
           <Text style={tw`text-lg`}> Working Place: 
             <Text style={tw`text-base text-transform: capitalize text-gray-700 font-bold ml-1`}>
               {'\t' + DoctorDetails.location}
@@ -93,7 +93,16 @@ const DoctorDetails = () => {
           </Text>
         </View>
 
-        <View style={tw`ml-6 -mt-5 mb-2`}>
+        
+        <View style={tw`ml-6 mt-5 mb-1`}>
+          <Text style={tw`text-lg`}> Charges per session: 
+            <Text style={tw`text-base  text-gray-700 font-bold ml-1`}>
+              {'\t' + "1500 LKR"}
+            </Text>
+          </Text>
+        </View>
+
+        <View style={tw`ml-6 mt-5 mb-1`}>
           <Text style={tw`text-lg`}> Available Hours:      
             <Text style={tw`text-base text-gray-700 font-bold ml-1`}>
               {'\t' + '10 am - 7 pm'}
@@ -101,12 +110,16 @@ const DoctorDetails = () => {
           </Text>
         </View>
         
-        <View style={tw`ml-6 mt-5 flex items-center`}>
-          <Icon name="info" size={25} color="#ac0000" style={tw`mr-2`} />
-          <Text style={tw`text-base text-red-700 font-bold`}>
-            Please set appointments within the available hours.
-          </Text>
-        </View>
+        <View style={tw`ml-7 mt-5 flex  `}>
+  <Text style={tw`flex-row items-center`}>
+    <Icon name="info" size={20} color="#ac0000" style={tw`mr-2`} />
+    <Text style={tw`text-base text-red-700 font-bold`}>
+      {"   "}Please consider the available hours
+    </Text>
+  </Text>
+</View>
+
+
       </View>
     </SafeAreaView>
   );
