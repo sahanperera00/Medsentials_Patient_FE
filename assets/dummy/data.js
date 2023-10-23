@@ -1,271 +1,261 @@
-export const purchaseRequests = [
+export const users = [
     {
-        _id: 1,
-        po: 'PO-001',
-        remark: 'This is a remark',
-        date: '2021-01-01',
-        status: 'approved',
-        site: 'Site A',
-
-        items: [
-            {
-                name: 'Item A',
-                quantity: 4,
-                price: 100,
-            },
-            {
-                name: 'Item B',
-                quantity: 2,
-                price: 400,
-            },
-            {
-                name: 'Item C',
-                quantity: 1,
-                price: 800,
-            }
-        ],
-        total: 2000,
-    },{
-        _id: 2,
-        po: 'PO-002',
-        remark: 'This is a remark 2',
-        date: '2021-01-02',
-        status: 'pending',
-        site: 'Site B, Havelock town, Colombo 5',
-        items: [
-            {
-                name: 'Item 1',
-                quantity: 4,
-                price: 100,
-
-            },
-            {
-                name: 'Item 2',
-                quantity: 2,
-                price: 200,
-            },
-            {
-                name: 'Item 3',
-                quantity: 1,
-                price: 300,
-            }
-        ],
+        _id: "1",
+        firstName: "Devindu",
+        lastName: "Samarasinghe",
+        email: "devindu@gmail.com",
+        password: "123456",
+        role: "doctor"
     },
     {
-        _id: 3,
-        po: 'PO-002',
-        remark: 'These items are required for the renovation of the kitchen area of the site',
-        date: '2021-01-02',
-        status: 'pending',
-        site: 'Site B, Havelock town, Colombo 5',
-        items: [
-            {
-                name: 'Item 1',
-                quantity: 4,
-                price: 100,
-
-            },
-            {
-                name: 'Item 2',
-                quantity: 2,
-                price: 200,
-            },
-            {
-                name: 'Item 3',
-                quantity: 1,
-                price: 300,
-            }
-        ],
-    },
-    {
-        _id: 4,
-        po: 'PO-002',
-        remark: 'This is a remark 2',
-        date: '2021-01-02',
-        status: 'pending',
-        site: 'Site B, Havelock town, Colombo 5',
-        items: [
-            {
-                name: 'Item 1',
-                quantity: 4,
-                price: 100,
-
-            },
-            {
-                name: 'Item 2',
-                quantity: 2,
-                price: 200,
-            },
-            {
-                name: 'Item 3',
-                quantity: 1,
-                price: 300,
-            }
-        ],
-    },
-    {
-        _id: 5,
-        po: 'PO-002',
-        remark: 'This is a remark 2',
-        date: '2021-01-02',
-        status: 'pending',
-        site: 'Site B, Havelock town, Colombo 5',
-        items: [
-            {
-                name: 'Item 1',
-                quantity: 4,
-                price: 100,
-
-            },
-            {
-                name: 'Item 2',
-                quantity: 2,
-                price: 200,
-            },
-            {
-                name: 'Item 3',
-                quantity: 1,
-                price: 300,
-            }
-        ],
-    },
-    {
-        _id: 6,
-        po: 'PO-002',
-        remark: 'This is a remark 2',
-        date: '2021-01-02',
-        status: 'pending',
-        site: 'Site B, Havelock town, Colombo 5',
-        items: [
-            {
-                name: 'Item 1',
-                quantity: 4,
-                price: 100,
-
-            },
-            {
-                name: 'Item 2',
-                quantity: 2,
-                price: 200,
-            },
-            {
-                name: 'Item 3',
-                quantity: 1,
-                price: 300,
-            }
-        ],
-    },
-    {
-        _id: 7,
-        po: 'PO-002',
-        remark: 'This is a remark 2',
-        date: '2021-01-02',
-        status: 'pending',
-        site: 'Site B, Havelock town, Colombo 5',
-        items: [
-            {
-                name: 'Item 1',
-                quantity: 4,
-                price: 100,
-
-            },
-            {
-                name: 'Item 2',
-                quantity: 2,
-                price: 200,
-            },
-            {
-                name: 'Item 3',
-                quantity: 1,
-                price: 300,
-            }
-        ],
-    },
-    {
-        _id: 8,
-        po: 'PO-002',
-        remark: 'This is a remark 2',
-        date: '2021-01-02',
-        status: 'pending',
-        site: 'Site B, Havelock town, Colombo 5',
-        items: [
-            {
-                name: 'Item 1',
-                quantity: 4,
-                price: 100,
-
-            },
-            {
-                name: 'Item 2',
-                quantity: 2,
-                price: 200,
-            },
-            {
-                name: 'Item 3',
-                quantity: 1,
-                price: 300,
-            }
-        ],
-    },
-    {
-        _id: 9,
-        po: 'PO-002',
-        remark: 'This is a remark 2',
-        date: '2021-01-02',
-        status: 'pending',
-        site: 'Site B, Havelock town, Colombo 5',
-        items: [
-            {
-                name: 'Item 1',
-                quantity: 4,
-                price: 100,
-
-            },
-            {
-                name: 'Item 2',
-                quantity: 2,
-                price: 200,
-            },
-            {
-                name: 'Item 3',
-                quantity: 1,
-                price: 300,
-            }
-        ],
-    },
-    
+        _id: "2",
+        firstName: "Rebecca",
+        lastName: "Kulanayagam",
+        email: "devindu@gmail.com",
+        password: "123456",
+        role: "client"
+    }
 ];
 
-export const user = {
-    _id: 'a3112sdasd123dsasd2',
-    name: 'David Samarasinghe',
-    email: 'david@mount.com',
-    password: '123456',
-    role: 'site-manager',
-    address: 'No. 123, Galle Road, Colombo 3',
-    contact: '0771234567',
-};
-
-
-export const itemList = [
+export const prescriptions = [
     {
-        itemId: '001',
-        price: 100,
-        itemName: 'Pliers',
+        _id: 'pres-001',
+        patient: 'Rebecca Kulanayagam',
+        doctor: 'Devindu Samarasinghe',
+        date: '2021-10-10',
+        closingDate: '2021-10-20',
+        drugs: [
+            {
+                drugName: 'Paracetamol',
+                drugQty: 20,
+                drugDosage: '50mg',
+                drugId: '08812-32123-123',
+                drugType: 'Human Prescription Drug'
+            },
+            {
+                drugName: 'Panadol',
+                drugQty: 10,
+                drugDosage: '50mg',
+                drugId: '08812-32123-123',
+                drugType: 'Human Prescription Drug'
+            },
+            {
+                drugName: 'Modafinil',
+                drugQty: 20,
+                drugDosage: '50mg',
+                drugId: '08812-32123-123',
+                drugType: 'Human Prescription Drug'
+            },
+            {
+                drugName: 'Advil',
+                drugQty: 40,
+                drugDosage: '50mg',
+                drugId: '08812-32123-123',
+                drugType: 'Human Prescription Drug'
+            }
+        ],
+        remark: 'Modafinil is given for the patient to increase the wakefulness. Refrain from takign more than 1 every 8 hours',
+        status: 'pending',
+        total: 4000
     },
     {
-        itemId: '002',
-        price: 200,
-        itemName: 'Hammer',
+        _id: 'pres-007',
+        patient: 'Rebecca Kulanayagam',
+        doctor: 'Devindu Samarasinghe',
+        date: '2021-10-10',
+        closingDate: '2021-10-20',
+        drugs: [
+            {
+                drugName: 'Paracetamol',
+                drugQty: 20,
+                drugDosage: '50mg',
+                drugId: '08812-32123-123',
+                drugType: 'Human Prescription Drug'
+            },
+            {
+                drugName: 'Panadol',
+                drugQty: 10,
+                drugDosage: '50mg',
+                drugId: '08812-32123-123',
+                drugType: 'Human Prescription Drug'
+            },
+            {
+                drugName: 'Modafinil',
+                drugQty: 20,
+                drugDosage: '50mg',
+                drugId: '08812-32123-123',
+                drugType: 'Human Prescription Drug'
+            },
+            {
+                drugName: 'Advil',
+                drugQty: 40,
+                drugDosage: '50mg',
+                drugId: '08812-32123-123',
+                drugType: 'Human Prescription Drug'
+            }
+        ],
+        remark: 'Modafinil is given for the patient to increase the wakefulness. Refrain from takign more than 1 every 8 hours',
+        status: 'pending',
+        total: 4000
     },
     {
-        itemId: '003',
-        price: 300,
-        itemName: 'Screwdriver',
+        _id: 'pres-002',
+        patient: 'Rebecca Kulanayagam',
+        doctor: 'Devindu Samarasinghe',
+        date: '2021-10-10',
+        closingDate: '2021-10-20',
+        drugs: [
+            {
+                drugName: 'Paracetamol',
+                drugQty: 20,
+                drugDosage: '50mg',
+                drugId: '08812-32123-123',
+                drugType: 'Human Prescription Drug'
+            },
+            {
+                drugName: 'Panadol',
+                drugQty: 10,
+                drugDosage: '50mg',
+                drugId: '08812-32123-123',
+                drugType: 'Human Prescription Drug'
+            },
+            {
+                drugName: 'Modafinil',
+                drugQty: 20,
+                drugDosage: '50mg',
+                drugId: '08812-32123-123',
+                drugType: 'Human Prescription Drug'
+            },
+            {
+                drugName: 'Advil',
+                drugQty: 40,
+                drugDosage: '50mg',
+                drugId: '08812-32123-123',
+                drugType: 'Human Prescription Drug'
+            }
+        ],
+        remark: 'Modafinil is given for the patient to increase the wakefulness. Refrain from takign more than 1 every 8 hours',
+        status: 'pending',
+        total: 4000
     },
     {
-        itemId: '004',
-        price:400,	
-        itemName: 'Wrench',
+        _id: 'pres-003',
+        patient: 'Rebecca Kulanayagam',
+        doctor: 'Devindu Samarasinghe',
+        date: '2021-10-10',
+        closingDate: '2021-10-20',
+        drugs: [
+            {
+                drugName: 'Paracetamol',
+                drugQty: 20,
+                drugDosage: '50mg',
+                drugId: '08812-32123-123',
+                drugType: 'Human Prescription Drug'
+            },
+            {
+                drugName: 'Panadol',
+                drugQty: 10,
+                drugDosage: '50mg',
+                drugId: '08812-32123-123',
+                drugType: 'Human Prescription Drug'
+            },
+            {
+                drugName: 'Modafinil',
+                drugQty: 20,
+                drugDosage: '50mg',
+                drugId: '08812-32123-123',
+                drugType: 'Human Prescription Drug'
+            },
+            {
+                drugName: 'Advil',
+                drugQty: 40,
+                drugDosage: '50mg',
+                drugId: '08812-32123-123',
+                drugType: 'Human Prescription Drug'
+            }
+        ],
+        remark: 'Modafinil is given for the patient to increase the wakefulness. Refrain from takign more than 1 every 8 hours',
+        status: 'completed',
+        total: 4000
+    },
+    {
+        _id: 'pres-005',
+        patient: 'Rebecca Kulanayagam',
+        doctor: 'Devindu Samarasinghe',
+        date: '2021-10-10',
+        closingDate: '2021-10-20',
+        drugs: [
+            {
+                drugName: 'Paracetamol',
+                drugQty: 20,
+                drugDosage: '50mg',
+                drugId: '08812-32123-123',
+                drugType: 'Human Prescription Drug'
+            },
+            {
+                drugName: 'Panadol',
+                drugQty: 10,
+                drugDosage: '50mg',
+                drugId: '08812-32123-123',
+                drugType: 'Human Prescription Drug'
+            },
+            {
+                drugName: 'Modafinil',
+                drugQty: 20,
+                drugDosage: '50mg',
+                drugId: '08812-32123-123',
+                drugType: 'Human Prescription Drug'
+            },
+            {
+                drugName: 'Advil',
+                drugQty: 40,
+                drugDosage: '50mg',
+                drugId: '08812-32123-123',
+                drugType: 'Human Prescription Drug'
+            }
+        ],
+        remark: 'Modafinil is given for the patient to increase the wakefulness. Refrain from takign more than 1 every 8 hours',
+        status: 'completed',
+        total: 4000
+    },
+    {
+        _id: 'pres-006',
+        patient: 'Rebecca Kulanayagam',
+        doctor: 'Devindu Samarasinghe',
+        date: '2021-10-10',
+        closingDate: '2021-10-20',
+        drugs: [
+            {
+                drugName: 'Paracetamol',
+                drugQty: 20,
+                drugDosage: '50mg',
+                drugId: '08812-32123-123',
+                drugType: 'Human Prescription Drug'
+            },
+            {
+                drugName: 'Panadol',
+                drugQty: 10,
+                drugDosage: '50mg',
+                drugId: '08812-32123-123',
+                drugType: 'Human Prescription Drug'
+            },
+            {
+                drugName: 'Modafinil',
+                drugQty: 20,
+                drugDosage: '50mg',
+                drugId: '08812-32123-123',
+                drugType: 'Human Prescription Drug'
+            },
+            {
+                drugName: 'Advil',
+                drugQty: 40,
+                drugDosage: '50mg',
+                drugId: '08812-32123-123',
+                drugType: 'Human Prescription Drug'
+            }
+        ],
+        remark: 'Modafinil is given for the patient to increase the wakefulness. Refrain from takign more than 1 every 8 hours',
+        status: 'completed',
+        total: 4000
     }
 ]

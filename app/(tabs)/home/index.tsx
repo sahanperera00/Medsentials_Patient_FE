@@ -15,7 +15,9 @@ export default function home() {
       <Link href="/categories">
       <Text style={tw`text-2xl text-center font-bold`}>Categories</Text>
      </Link>
-      
+      <Link href="/axiostest">
+        <Text style={tw`text-2xl text-center font-bold`}>Testing Axios</Text>
+      </Link>
     </View>
   );
 }
