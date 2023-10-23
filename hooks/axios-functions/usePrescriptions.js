@@ -8,6 +8,7 @@ const usePrescriptions = ()=>{
     const testBackend = async()=>{
         try{
             const response = await instance.get('/hello');
+            console.log("response is: ", response.data);
             return response.data;
         }catch(error){
             console.error(error);

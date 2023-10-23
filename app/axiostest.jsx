@@ -1,20 +1,28 @@
 import {View, Text} from 'react-native';
 import React, {useState, useEffect} from 'react';
-import tw from 'twrnc';
 import usePrescriptions from '../hooks/axios-functions/usePrescriptions';
-
+import tw from 'twrnc';
 
 const AxiosTest = ()=>{
+    const [text, setText] = useState([]);
+    console.log("Text is", text);
 
     const {testBackend} = usePrescriptions();
-    const [testText, setTestText] = useState('');
 
     useEffect(()=>{
-        setTestText(testBackend());
+        const fetchData = async ()=>{
+            const response = await testBackend();
+            setText(response);
+        }
+
+        fetchData();
     },[])
+
+    
+
     return (
         <View>
-            <Text>{testText ? testText : 'API IS NOT WORKING, CHECK THE ENV'}</Text>
+            <Text style={tw`ml-30 mt-30 text-3xl`}>{text ? text: "Hello"}</Text>
         </View>
     )
 }
