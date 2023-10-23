@@ -13,23 +13,7 @@ export const Badge = ({ variant = "default", text, style, ...props }) => {
       container: tailwind`bg-orange-400`,
       text: tailwind`text-white`,
     },
-    screening: {
-      container: tailwind`bg-cyan-700`,
-      text: tailwind`text-white`,
-    },
-    approved: {
-      container: tailwind`bg-green-800`,
-      text: tailwind`text-white`,
-    },
-    rejected: {
-      container: tailwind`bg-red-600`,
-      text: tailwind`text-white`,
-    },
-    dispatched: {
-      container: tailwind`bg-indigo-600`,
-      text: tailwind`text-white`,
-    },
-    delivered: {
+    completed: {
       container: tailwind`bg-green-600`,
       text: tailwind`text-white`,
     },
