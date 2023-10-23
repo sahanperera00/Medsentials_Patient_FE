@@ -13,7 +13,7 @@ export default function home() {
       <Text style={tw`text-5xl text-center font-bold`}>Home</Text>
       <View style={tw`h-30`} />
       <Link href="/categories">
-      <Text style={tw`text-2xl text-center font-bold`}>see more</Text>
+      <Text style={tw`text-2xl text-center font-bold`}>Categories</Text>
      </Link>
       
     </View>

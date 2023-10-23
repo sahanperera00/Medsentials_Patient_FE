@@ -1,10 +1,11 @@
 import { View, Text } from "react-native";
 import React from "react";
-import { router } from "expo-router";
+import { useRouter } from "expo-router";
 import tw from "twrnc";
 import Button from "../components/button/Button";
 
 export default function payment() {
+  const router = useRouter();
   return (
     <View style={tw`flex-1 items-center px-5`}>
       <View style={tw`h-30`} />

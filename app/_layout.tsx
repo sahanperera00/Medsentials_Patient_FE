@@ -9,6 +9,10 @@ const StackLayout = () => {
     >
       <Stack.Screen name="(tabs)" />
       <Stack.Screen name="login" />
+      {/* <Stack.Screen
+        name="pharmacyDetails"
+        options={{ presentation: "card"}}
+      /> */}
     </Stack>
   );
 };
