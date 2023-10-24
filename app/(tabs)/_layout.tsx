@@ -48,7 +48,7 @@ export default () => {
         }}
       />
       <Tabs.Screen
-        name="chats"
+        name="inbox"
         options={{
           headerShown: false,
           tabBarLabel: "Chats",
