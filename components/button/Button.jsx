@@ -2,6 +2,7 @@ import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
 import tw from "twrnc";
 
+
 export default function Button({ text, onPress, disabled }) {
   return (
     <TouchableOpacity

@@ -16,6 +16,8 @@ import { FIREBASE_AUTH } from "../FirebaseConfig";
 import { Link, router } from "expo-router";
 import Button from "../components/button/Button";
 import { Redirect } from "expo-router";
+import useUsers from "../hooks/axios-functions/useUser";
+
 
 export default function login() {
   const [user, setUser] = useState(null);
@@ -24,11 +26,18 @@ export default function login() {
   const [loading, setLoading] = useState(false);
   const auth = FIREBASE_AUTH;
 
+  const {signInUser} = useUsers();
+
   const login = async () => {
     setLoading(true);
     try {
       const response = await signInWithEmailAndPassword(auth, email, password);
+  
+      //create a contextAPI Later On -> 
+      const mongoLog = await signInUser({email, password});
+      console.log(mongoLog);
       alert("Login successfully");
+      console.log(response);
       router.push("home");
     } catch (error: any) {
       alert(error.message);
@@ -76,7 +85,7 @@ export default function login() {
             <ActivityIndicator size={"large"} color="gray" />
           ) : (
             <View style={tw`w-full flex flex-col gap-5`}>
-              <Button text="Login" onPress={login} style={tw`w-full py-5`} />
+              <Button text="Login" onPress={login} disabled={false}/>
             </View>
           )}
           <Text style={tw`text-xl mt-8`}>
