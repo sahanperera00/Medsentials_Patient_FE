@@ -1,22 +1,61 @@
-import { View, Text } from "react-native";
-import { Link } from "expo-router";
-import React from "react";
-import tw from "twrnc";
-import ExpoStatusBar from "expo-status-bar/build/ExpoStatusBar";
+import { View, Text, ScrollView } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import tw from 'twrnc';
+import { useRouter } from 'expo-router';
+import SearchBar from '../../../components/searchbar/SearchBar';
+import { prescriptions } from '../../../assets/dummy/data';
+import PrescriptionCard from '../../../components/prescriptions/PrescriptionCard';
 
-export default function myPrescriptions() {
+const MyPrescriptions = () => {
+
+  const [searchData, setSearchData] = useState('');
+  const router = useRouter();
+  
+  const [pres, setPres] = useState([]);
+
+  const getPrescriptions = () => {
+    const response = prescriptions;
+    setPres(response);
+  }
+
+
+
+  useEffect(() => {
+    getPrescriptions();
+    console.log(pres);
+  }, [])
+
   return (
-    <View style={tw`flex-1 items-center px-5`}>
-      <View style={tw`h-30`} />
-      <ExpoStatusBar style="dark" />
-      <Text style={tw`text-5xl text-center font-bold`}>My Prescriptions</Text>
-      <View style={tw`h-30`} />
-      <Link href="/profile/prescriptionDetails/1">
-        <Text style={tw`text-2xl text-center font-bold`}>Prescription 1</Text>
-      </Link>
-      <Link href="/profile/prescriptionDetails/2">
-        <Text style={tw`text-2xl text-center font-bold`}>Prescription 2</Text>
-      </Link>
-    </View>
-  );
+    <ScrollView keyboardShouldPersistTaps='always' style={tw`flex-1 mt-10 mb-28`}>
+      <View style={tw`flex-1 ml-5 mt-10`}>
+        <Text style={tw`text-3xl font-bold`}>
+          Your Prescriptions
+        </Text>
+      </View>
+
+      {/* SEARCH BAR IMPLEMENTATION */}
+      <View style={tw`border-b border-purple-400 mx-4`}>
+        <SearchBar onSearch={setSearchData} />
+      </View>
+
+      <ScrollView style={tw`mx-4 mt-5`}>
+        {pres.filter((data)=>{
+          if(searchData === ''){
+            return data;
+          }else if(data?._id.toString().toLowerCase()?.includes(searchData?.toLowerCase())){
+            return data;
+          }
+        }).map((prescription, index) => {
+          return (
+            <View key={index} style={tw`bg-white w-100/100 rounded-xl shadow-sm my-1 mx-auto`}>
+              <PrescriptionCard data={prescription} handleTap={() => router.push(`/profile/prescriptionDetails/${prescription._id}`)} />
+            </View>
+          )
+        })}
+      </ScrollView>
+
+    </ScrollView>
+  )
 }
+
+export default MyPrescriptions;
