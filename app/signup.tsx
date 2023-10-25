@@ -8,12 +8,16 @@
   import React, { useState } from "react";
   import tw from "twrnc";
   import { createUserWithEmailAndPassword } from "firebase/auth";
-  import { FIREBASE_AUTH } from "../FirebaseConfig";
+  import { FIREBASE_AUTH,FIREBASE_FIRESTORE } from "../FirebaseConfig";
   import { Link, router } from "expo-router";
   import Button from "../components/button/Button";
   import useUsers from "../hooks/axios-functions/useUser";
+import { doc, setDoc } from "firebase/firestore";
 
   export default function signup() {
+
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
@@ -30,6 +34,17 @@
           email,
           password
         );
+
+        const userUID = response.user.uid;
+        const docRef = doc(FIREBASE_FIRESTORE, "users", userUID);
+
+        await setDoc(docRef, {
+          email,
+          password,
+          userUID,
+          firstName,
+          lastName,
+        });
         // Save user to mongo -> Later add this user to context API
         const mongoUser = {
           firebaseId: response.user.uid,
@@ -58,6 +73,24 @@
       >
         <Text style={tw`text-5xl text-center font-bold`}>Sign Up</Text>
         <View style={tw`w-full flex flex-col gap-5 my-5`}>
+          <TextInput
+            value={firstName}
+            style={tw`w-full py-4 border border-gray-300 px-4 rounded-full`}
+            placeholder="First Name"
+            placeholderTextColor={"gray"}
+            // keyboardType="email-address"
+            autoCapitalize="none"
+            onChangeText={(text) => setFirstName(text)}
+          />
+          <TextInput
+            value={lastName}
+            style={tw`w-full py-4 border border-gray-300 px-4 rounded-full`}
+            placeholder="lastName"
+            placeholderTextColor={"gray"}
+            // keyboardType="email-address"
+            autoCapitalize="none"
+            onChangeText={(text) => setLastName(text)}
+          />
           <TextInput
             value={email}
             style={tw`w-full py-4 border border-gray-300 px-4 rounded-full`}
