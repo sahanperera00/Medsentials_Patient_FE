@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     flex: 1,
     borderRadius: 10,
     shadowColor: COLORS.white,
-    paddingVertical: SIZES.medium,
+    paddingVertical: 4,
     marginVertical: -10,
     height: 610,
   }, 
