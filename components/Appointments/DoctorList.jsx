@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { View, Text, ScrollView } from "react-native";
 import { useRouter } from "expo-router";
-import styles from ".././common/lists/cardlist/cardlist.style";
+//import styles from ".././common/lists/cardlist/cardlist.style";
 import tw from "twrnc";
 import DoctorCard from "./DoctorSingleCard.jsx";
 import { doctors } from "../../assets/dummy/datadoc";
-import SearchBar from '../../components/searchbar/SearchBar';
+import SearchBar from "../../components/searchbar/SearchBar";
 
 const DoctorList = () => {
   const router = useRouter();
@@ -21,12 +21,21 @@ const DoctorList = () => {
   );
 
   return (
-    <ScrollView stickyHeaderHiddenOnScroll={4}>
-      <SearchBar onSearch={setSearch} />
-      <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
+    <ScrollView
+      keyboardShouldPersistTaps="always"
+      style={tw`flex-1 mt-1 mb-28`}
+    >
+      <View style={tw`border-b border-purple-400 mx-4`}>
+        <SearchBar onSearch={setSearch} />
+      </View>
+
+      <ScrollView style={tw`mx-4 mt-5`} showsVerticalScrollIndicator={false}>
         {filteredDoctors.map((data, index) => {
           return (
-            <View key={index} style={tw`w-85 rounded-md shadow-md my-1 mx-auto`}>
+            <View
+              key={index}
+              style={tw`bg-white w-100/100 rounded-xl shadow-sm my-1 mx-auto`}
+            >
               <DoctorCard data={data} handleNavigate={handleNavigate} />
             </View>
           );
