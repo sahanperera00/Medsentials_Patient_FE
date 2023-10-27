@@ -9,7 +9,7 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <View style={tw`bg-white w-84 rounded-full shadow-md my-8 mx-auto`}>
+    <View style={tw`bg-white w-95 rounded-xl shadow-sm my-8 mx-auto`}>
       <TextInput
         style={tw`flex-1 p-3 bg-white rounded-xl`}
         placeholder="Search..."

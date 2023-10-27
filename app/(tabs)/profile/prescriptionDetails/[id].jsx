@@ -86,7 +86,7 @@ const SinglePrescription = () => {
       <View style={tw`mx-5 mb-5`}>
         <Button onPress={()=>{
           if(prescription.status ==="pending"){
-            router.push('/checkout');
+            router.push('/deliveryOption');
           }else{
             router.back();
           }
