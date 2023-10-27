@@ -12,11 +12,31 @@ const usePrescriptions = ()=>{
             return response.data;
         }catch(error){
             console.error(error);
-            throw error;
+            throw  new Error(error);
         }
     }
 
-    return {testBackend};
+    const getAllPrescriptions = async()=>{
+        try{
+            const response = await instance.get('/prescription/');
+            return response.data;
+        }catch(error){
+            console.log(error);
+            throw new Error(error);
+        }
+    }
+
+    const getPrescriptionById = async(id)=>{
+        try{
+            const response = await instance.get(`/prescription/${id}`);
+            return response.data;
+        }catch(error){  
+            console.log(error);
+            throw new Error(error);
+        }
+    }
+
+    return {testBackend, getAllPrescriptions, getPrescriptionById};
 }
 
 export default usePrescriptions;

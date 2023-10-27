@@ -7,35 +7,41 @@ import DrugCard from '../../../../components/prescriptions/drugs/DrugCard';
 import { formatter } from '../../../../utils/formatter';
 import Button from '../../../../components/button/Button';
 import { useRouter } from 'expo-router';
+import usePrescriptions from '../../../../hooks/axios-functions/usePrescriptions';
 
 const SinglePrescription = () => {
+
+  //custom hooks
+  const {getPrescriptionById} = usePrescriptions();
 
   const [prescription, setPrescription] = useState({})
   const params = useLocalSearchParams();
   const router = useRouter();
 
 
-  const fetchPrescriptions = () => {
-    const response = prescriptions.filter(prescription => prescription?._id === params.id);
-    setPrescription(response[0]);
+  const fetchPrescriptions = async() => {
+    try{
+      const response = await getPrescriptionById(params.id);
+      setPrescription(response);
+    }catch(error){
+      console.log(error);
+    }
   }
 
   useEffect(() => {
     fetchPrescriptions();
   }, [])
 
-  console.log(params.id);
-
   return (
     <ScrollView style={tw`flex-1 mt-10 mb-28`}>
       <View style={tw`ml-5 mt-10`}>
         <View style={tw`flex flex-row`}>
           <Text style={tw`text-3xl font-bold`}>Prescription : </Text>
-          <Text style={tw`text-3xl font-bold text-transform: capitalize text-purple-700`}>{prescription?._id}</Text>
+          <Text style={tw`text-3xl font-bold text-transform: capitalize text-purple-700`}>{prescription?.prescriptId}</Text>
         </View>
         <View style={tw`flex flex-row`}>
           <Text style={tw`text-base text-stone-400 ml-.5`}>Doctor:</Text>
-          <Text style={tw`text-base text-stone-400 ml-1`}>{prescription?.doctor}</Text>
+          <Text style={tw`text-base text-stone-400 ml-1`}>Dr. {prescription?.doctor?.firstName} {prescription?.doctor?.lastName}</Text>
         </View>
       </View>
 
@@ -69,30 +75,25 @@ const SinglePrescription = () => {
           <Text style={tw`text-lg mt-8 mb-2 ml-4`}>Validity Period and Estimations</Text>
           <View style={tw`flex flex-row ml-3`}>
             <Text style={tw`text-base text-slate-600`}>Appointment Date: </Text>
-            <Text style={tw`text-base text-slate-600`}>{prescription?.date}</Text>
+            <Text style={tw`text-base text-slate-600`}>{(prescription?.createdAt)?.split('T')[0]}</Text>
           </View>
 
           <View style={tw`flex flex-row ml-3`}>
             <Text style={tw`text-base text-slate-600`}>Prescription Expiry Date: </Text>
-            <Text style={tw`text-base text-slate-600`}>{prescription?.closingDate}</Text>
+            <Text style={tw`text-base text-slate-600`}>{'N/A'}</Text>
           </View>
 
           <View style={tw`flex flex-row ml-3p`}>
             <Text style={tw`text-base text-slate-600`}>Estimated Total:  </Text>
-            <Text style={tw`text-base text-slate-600`}>{formatter(prescription?.total)}</Text>
+            <Text style={tw`text-base text-slate-600`}>{formatter(5230)}</Text>
           </View>
         </View>
       </View>
       <View style={tw`mx-5 mb-5`}>
         <Button onPress={()=>{
-          if(prescription.status ==="pending"){
-            router.push('/checkout');
-          }else{
-            router.back();
-          }
-        }} text={prescription?.status === "pending" ? "Proceed to Checkout" : "Back to Prescription"}/>
+            router.push('/deliveryOption');
+        }} text={"Proceed to Checkout"}/>
       </View>
-
     </ScrollView>
   )
 }
