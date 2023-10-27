@@ -1,16 +1,17 @@
-import { StyleSheet } from 'react-native';
-import { COLORS, SHADOWS, SIZES } from '../../constants';
+import { StyleSheet } from "react-native";
+import { COLORS, SHADOWS, SIZES } from "../../constants";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'row',
-    padding: SIZES.medium,
-    borderRadius: SIZES.small,
-    backgroundColor: '#f3eef5',
+    justifyContent: "space-between",
+    alignItems: "center",
+    flexDirection: "row",
+    padding: SIZES.small,
+    borderRadius: SIZES.medium,
+    backgroundColor: "#FFF",
     ...SHADOWS.medium,
     shadowColor: COLORS.white,
-    alignItems: 'center',
   },
   doctorImage: {
     width: 100,
@@ -28,7 +29,7 @@ const styles = StyleSheet.create({
     marginBottom: 5, // Add space after the doctor's name
   },
   dateTimeContainer: {
-    flexDirection: 'row',
+    flexDirection: "row",
     marginBottom: 5, // Add space after the date and time
   },
   date: {
@@ -41,23 +42,16 @@ const styles = StyleSheet.create({
     color: COLORS.gray,
   },
   buttonContainer: {
-    flexDirection: 'row',
+    flexDirection: "row",
     marginTop: 5, // Add space between date/time and buttons
   },
-  cancelButton: {
-    flex: 1,
-    backgroundColor: '#bebebe',
-    padding: 5, // Make the buttons smaller
-    borderRadius: 5,
-    alignItems: 'center',
-    marginEnd: 5,
-  },
+
   joinChatButton: {
     flex: 1,
-    backgroundColor: '#7e57c2',
+    backgroundColor: "#7e57c2",
     padding: 5, // Make the buttons smaller
     borderRadius: 5,
-    alignItems: 'center',
+    alignItems: "center",
     marginStart: 5,
   },
   buttonText: {

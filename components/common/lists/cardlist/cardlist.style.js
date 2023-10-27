@@ -6,14 +6,14 @@ const styles = StyleSheet.create({
   container: {
     width: "100%",
   },
-  scrollView:{
+  scrollView: {
     flex: 1,
     borderRadius: 10,
     shadowColor: COLORS.white,
-    paddingVertical: 4,
-    marginVertical: -10,
+    paddingVertical: 5,
+    marginVertical: 10,
     height: 610,
-  }, 
+  },
   userName: {
     fontFamily: FONT.regular,
     fontSize: SIZES.large,
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     marginRight: SIZES.small,
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: .5,
+    borderRadius: 0.5,
     height: "100%",
   },
   searchInput: {
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
     paddingHorizontal: SIZES.large,
-    backgroundColor: 'white',
+    backgroundColor: "white",
     borderRadius: SIZES.medium,
   },
   searchBtn: {

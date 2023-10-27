@@ -1,5 +1,5 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
-import styles from "../../../components/Appointments/DoctorSingleCard.style";
+import styles from "./DoctorSingleCard.style";
 import tw from "twrnc";
 
 const DoctorCard = ({ data, handleNavigate }) => {
@@ -9,7 +9,7 @@ const DoctorCard = ({ data, handleNavigate }) => {
       onPress={() => handleNavigate(data._id)}
     >
       <Image
-        source={require("../../../assets/images/doctor_6805035.png")}
+        source={require("../../assets/images/doctor_6805035.png")}
         style={styles.doctorImage}
       />
       <View style={styles.textContainer}>
