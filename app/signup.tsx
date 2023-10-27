@@ -36,7 +36,7 @@ import { doc, setDoc } from "firebase/firestore";
         );
 
         const userUID = response.user.uid;
-        const docRef = doc(FIREBASE_FIRESTORE, "users", userUID);
+        const docRef = doc(FIREBASE_FIRESTORE, "patients", userUID);
 
         await setDoc(docRef, {
           email,
@@ -45,6 +45,7 @@ import { doc, setDoc } from "firebase/firestore";
           firstName,
           lastName,
         });
+
         // Save user to mongo -> Later add this user to context API
         const mongoUser = {
           firebaseId: response.user.uid,
@@ -57,13 +58,14 @@ import { doc, setDoc } from "firebase/firestore";
 
         
         await signUpUser(mongoUser);
-      
+        setLoading(false);
         alert("Account created successfully");
         router.push("login");
       } catch (error: any) {
+        setLoading(false);
         alert(error.message);
       }
-      setLoading(false);
+      
     };
 
     return (
@@ -79,16 +81,16 @@ import { doc, setDoc } from "firebase/firestore";
             placeholder="First Name"
             placeholderTextColor={"gray"}
             // keyboardType="email-address"
-            autoCapitalize="none"
+            autoCapitalize="words"
             onChangeText={(text) => setFirstName(text)}
           />
           <TextInput
             value={lastName}
             style={tw`w-full py-4 border border-gray-300 px-4 rounded-full`}
-            placeholder="lastName"
+            placeholder="Last Name"
             placeholderTextColor={"gray"}
             // keyboardType="email-address"
-            autoCapitalize="none"
+            autoCapitalize="words"
             onChangeText={(text) => setLastName(text)}
           />
           <TextInput
