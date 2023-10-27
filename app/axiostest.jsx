@@ -17,9 +17,6 @@ const AxiosTest = ()=>{
 
         fetchData();
     },[])
-
-    
-
     return (
         <View>
             <Text style={tw`ml-30 mt-30 text-3xl`}>{text ? text: "Hello"}</Text>
