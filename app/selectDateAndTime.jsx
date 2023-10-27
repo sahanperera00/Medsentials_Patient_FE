@@ -55,20 +55,21 @@ const SelectDateAndTime1 = () => {
 
       <View style={{ marginVertical: 10 }}>
         <Text style={{ fontSize: 18 }}>Select Date</Text>
-        <Calendar
-          onDayPress={handleDateSelect}
-          current={selectedDate}
-          markedDates={{
-            [selectedDate]: { selected: true, selectedColor: "#7e57c2" },
-          }}
-          style={{ borderWidth: 1, borderColor: "#7e57c2", borderRadius: 10 }}
-        />
+        <View style={tw`bg-stone-100 rounded-lg p-3`}>
+          <Calendar
+            onDayPress={handleDateSelect}
+            current={selectedDate}
+            markedDates={{
+              [selectedDate]: { selected: true, selectedColor: "#7e57c2" },
+            }}
+            style={{ borderWidth: 1, borderColor: "#7e57c2", borderRadius: 10 }}
+          />
+        </View>
       </View>
-
       <View style={{ marginVertical: 10 }}>
         <Text style={{ fontSize: 18 }}>Select Time</Text>
         {showTimePicker && (
-          <View style={tw`bg-white rounded-lg p-2`}>
+          <View style={tw`bg-stone-100 rounded-lg p-2`}>
             <DateTimePicker
               value={selectedTime}
               mode="time"
@@ -76,10 +77,12 @@ const SelectDateAndTime1 = () => {
               onChange={handleTimeChange}
               textColor="#7e57c2"
               style={{
-                width: 200,
+                width: 310,
                 height: 100,
                 alignSelf: "center",
+                borderWidth: 1,
                 borderColor: "#7e57c2",
+                borderRadius: 10,
               }}
             />
           </View>
