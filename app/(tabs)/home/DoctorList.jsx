@@ -4,8 +4,8 @@ import { useRouter } from "expo-router";
 //import styles from ".././common/lists/cardlist/cardlist.style";
 import tw from "twrnc";
 import DoctorCard from "./DoctorSingleCard.jsx";
-import { doctors } from "../../assets/dummy/datadoc";
-import SearchBar from "../../components/searchbar/SearchBar";
+import { doctors } from "../../../assets/dummy/datadoc.js";
+import SearchBar from "../../../components/searchbar/SearchBar.jsx";
 
 const DoctorList = () => {
   const router = useRouter();
@@ -16,8 +16,11 @@ const DoctorList = () => {
   };
 
   // Filter doctors by specialization
-  const filteredDoctors = doctors.filter((data) =>
-    data.specialization.includes(search)
+  const filteredDoctors = doctors.filter(
+    (data) =>
+      data.specialization.includes(search) ||
+      data.name.includes(search) ||
+      data.location.includes(search)
   );
 
   return (
@@ -25,6 +28,11 @@ const DoctorList = () => {
       keyboardShouldPersistTaps="always"
       style={tw`flex-1 mt-1 mb-28`}
     >
+      <View style={tw`flex-1 items-center mt-18`}>
+        <Text style={tw`text-3xl text-center font-bold`}>
+          Choose Your Doctor
+        </Text>
+      </View>
       <View style={tw`border-b border-purple-400 mx-4`}>
         <SearchBar onSearch={setSearch} />
       </View>
