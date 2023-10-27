@@ -11,16 +11,16 @@ const PrescriptionCard = ({ data, handleTap }) => {
                 <View style={tw`flex flex-row items-center`}>
                     <View style={tw`flex-1`}>
                         <Text style={styles.jobName} numberOfLines={1}>
-                            {data?._id}
+                            PRES - {data?.prescriptId}
                         </Text>
                     </View>
                     <View>
-                        <Badge variant={data?.status} text={data?.status} />
+                        <Badge variant={'pending'} text={'pending'} />
                     </View>
                 </View>
                 <View >
-                    <Text style={tw`text-sm text-transform: capitalize`}>Doctor: {data?.doctor}</Text>
-                    <Text style={tw`text-sm text-gray-400 text-transform: capitalize`}>Date:  {data?.date} </Text>
+                    <Text style={tw`text-sm text-transform: capitalize`}>Doctor: {data?.doctor.firstName} {data?.doctor.lastName} </Text>
+                    <Text style={tw`text-sm text-gray-400 text-transform: capitalize`}>Date:  {(data?.createdAt).split('T')[0]} </Text>
                 </View>
             </View>
         </TouchableOpacity>

@@ -3,22 +3,21 @@ import React, { useState, useEffect } from 'react';
 import tw from 'twrnc';
 import { useRouter } from 'expo-router';
 import SearchBar from '../../../components/searchbar/SearchBar';
-import { prescriptions } from '../../../assets/dummy/data';
 import PrescriptionCard from '../../../components/prescriptions/PrescriptionCard';
+import usePrescriptions from '../../../hooks/axios-functions/usePrescriptions';
 
 const MyPrescriptions = () => {
 
-  const [searchData, setSearchData] = useState('');
+  const {getAllPrescriptions} = usePrescriptions(); 
   const router = useRouter();
-  
+
+  const [searchData, setSearchData] = useState('');
   const [pres, setPres] = useState([]);
 
-  const getPrescriptions = () => {
-    const response = prescriptions;
+  const getPrescriptions = async() => {
+    const response = await getAllPrescriptions();
     setPres(response);
   }
-
-
 
   useEffect(() => {
     getPrescriptions();
@@ -42,7 +41,7 @@ const MyPrescriptions = () => {
         {pres.filter((data)=>{
           if(searchData === ''){
             return data;
-          }else if(data?._id.toString().toLowerCase()?.includes(searchData?.toLowerCase())){
+          }else if(data?.prescriptionId.toString().toLowerCase()?.includes(searchData?.toLowerCase())){
             return data;
           }
         }).map((prescription, index) => {
