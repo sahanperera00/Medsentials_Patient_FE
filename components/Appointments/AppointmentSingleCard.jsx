@@ -3,13 +3,13 @@ import { View, Text, TouchableOpacity, Image } from "react-native";
 import Icon from "react-native-vector-icons/Foundation"; // Import the icon library of your choice
 import styles from "./appointments.style"; // Import your appointment card styles
 import tw from "twrnc";
+import { router } from "expo-router";
 
-const AppointmentCard = ({
-  data,
-  handleCancel,
-  handleJoinChat,
-  doctorImage,
-}) => {
+const AppointmentCard = ({ data, handleCancel, handleJoinChat, doctorImage }) => {
+
+  const chatWithDoc = (userUID) => { 
+    router.push("chatThread/MFtyBCzmZfVVSfSDfZw77qteQtN2"); 
+  };
   return (
     <TouchableOpacity style={styles.container}>
       <Image
@@ -33,10 +33,17 @@ const AppointmentCard = ({
 
         <View style={styles.buttonContainer}>
           <TouchableOpacity
-            style={styles.joinChatButton}
-            onPress={() => handleJoinChat(data._id)}
+            style={styles.cancelButton}
+            onPress={() => handleCancel(data._id)}
           >
-            <Text style={styles.buttonText}>Join the Chat</Text>
+            <Text style={styles.buttonText}>Cancel</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.joinChatButton}
+            onPress={() => chatWithDoc()}
+          >
+            <Text style={styles.buttonText}>Join Chat</Text>
           </TouchableOpacity>
         </View>
       </View>
