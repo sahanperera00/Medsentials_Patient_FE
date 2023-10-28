@@ -236,7 +236,7 @@ const ChatScreen = ({ user, route }) => {
      };
 
      // Set a 2-second delay to send the response
-     const responseTimeout = setTimeout(sendResponse, 6000);
+     const responseTimeout = setTimeout(sendResponse, 10000);
 
      // Clear the timeout when the component unmounts
      return () => clearTimeout(responseTimeout);
