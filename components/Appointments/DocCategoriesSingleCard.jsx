@@ -8,7 +8,7 @@ const CategoryCard = ({ category, imageSource }) => {
 
   const handleSelectCategory = () => {
     // Use the navigation.navigate method to go to the doctorList screen
-    navigation.navigate('doctorList', { category });
+    navigation.navigate('DoctorList', { category });
   };
 
   return (
