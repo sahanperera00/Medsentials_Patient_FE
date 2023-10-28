@@ -1,6 +1,6 @@
 // SearchBar.jsx
 import React from "react";
-import { View, TextInput} from "react-native";
+import { View, TextInput } from "react-native";
 import tw from "twrnc";
 
 const SearchBar = ({ onSearch }) => {
@@ -9,7 +9,7 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <View style={tw`bg-white w-84 rounded-full shadow-md my-8 mx-auto`}>
+    <View style={tw`bg-white w-80 rounded-xl shadow-sm my-8 mx-auto`}>
       <TextInput
         style={tw`flex-1 p-3 bg-white rounded-xl`}
         placeholder="Search..."
@@ -21,4 +21,3 @@ const SearchBar = ({ onSearch }) => {
 };
 
 export default SearchBar;
-

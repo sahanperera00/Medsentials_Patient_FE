@@ -31,7 +31,6 @@ const styles = StyleSheet.create({
     marginHorizontal: SIZES.medium,
   },
   jobName: {
-    textTransform: "capitalize",
     fontSize: SIZES.medium,
     color: COLORS.primary,
   },
@@ -39,7 +38,6 @@ const styles = StyleSheet.create({
     fontSize: SIZES.small + 2,
     color: COLORS.gray,
     marginTop: 3,
-    textTransform: "capitalize",
   },
 });
 

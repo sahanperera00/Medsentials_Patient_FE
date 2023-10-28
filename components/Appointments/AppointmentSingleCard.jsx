@@ -1,8 +1,8 @@
-import React from 'react';
-import { View, Text, TouchableOpacity, Image } from 'react-native';
-import Icon from 'react-native-vector-icons/Foundation'; // Import the icon library of your choice
-import styles from './appointments.style'; // Import your appointment card styles
-import tw from 'twrnc';
+import React from "react";
+import { View, Text, TouchableOpacity, Image } from "react-native";
+import Icon from "react-native-vector-icons/Foundation"; // Import the icon library of your choice
+import styles from "./appointments.style"; // Import your appointment card styles
+import tw from "twrnc";
 import { router } from "expo-router";
 
 const AppointmentCard = ({ data, handleCancel, handleJoinChat, doctorImage }) => {

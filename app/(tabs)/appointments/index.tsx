@@ -4,7 +4,7 @@ import AppointmentList from "../../../components/Appointments/AppointmentList";
 import tw from "twrnc";
 import { Link } from "expo-router";
 
-import DoctorList from "../../../components/Appointments/DoctorList";
+import DoctorList from "../home/DoctorList";
 import ExpoStatusBar from "expo-status-bar/build/ExpoStatusBar";
 import SearchBar from "../../../components/searchbar/SearchBar";
 

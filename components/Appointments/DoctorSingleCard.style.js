@@ -1,16 +1,17 @@
-import { StyleSheet } from 'react-native';
-import { COLORS, SHADOWS, SIZES } from '../../constants'; // Update the path to your constants
+import { StyleSheet } from "react-native";
+import { COLORS, SHADOWS, SIZES } from "../../constants"; // Update the path to your constants
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'row',
+    justifyContent: "space-between",
+    alignItems: "center",
+    flexDirection: "row",
     padding: SIZES.small,
-    borderRadius: SIZES.small,
-    backgroundColor: '#f3eef5',
+    borderRadius: SIZES.medium,
+    backgroundColor: "#FFF",
     ...SHADOWS.medium,
     shadowColor: COLORS.white,
-    alignItems: 'center',
   },
   doctorImage: {
     width: 100, // Adjust the width for your image
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
     fontSize: SIZES.small + 2,
     color: COLORS.gray,
     marginTop: 3,
-    textTransform: 'capitalize',
+    textTransform: "capitalize",
   },
 });
 

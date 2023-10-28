@@ -1,24 +1,29 @@
-import { View, Text } from "react-native";
-import { Link } from "expo-router";
-import React from "react";
+import { Text, View, ScrollView } from "react-native";
+import React, { useEffect } from "react";
 import tw from "twrnc";
-import ExpoStatusBar from "expo-status-bar/build/ExpoStatusBar";
-import DoctorList from "../../../components/Appointments/DoctorList";
+import { Link } from "expo-router";
+import Button from "../../../components/button/Button";
+import { router } from "expo-router";
 
 export default function home() {
   return (
-    <View style={tw`flex-1 items-center px-5`}>
-      <View style={tw`h-30`} />
-      <ExpoStatusBar style="dark" />
-      <Text style={tw`text-5xl text-center font-bold`}>Home</Text>
-      <View style={tw`h-30`} />
-      <Link href="/categories">
-      <Text style={tw`text-2xl text-center font-bold`}>Categories</Text>
-     </Link>
-      <Link href="/axiostest">
-        <Text style={tw`text-2xl text-center font-bold`}>Testing Axios</Text>
-      </Link>
-    </View>
+    <ScrollView>
+      <View style={tw`flex-1 items-center px-5`}>
+        <Text style={tw`text-4xl text-center font-bold`}>Home</Text>
+      </View>
+      <View style={tw`flex-1 flex-col w-full gap-5`}>
+        <Link href="/categories">
+          <Text style={tw`text-2xl text-center font-bold`}>Categories</Text>
+        </Link>
+
+        <Button
+          text="Doctors"
+          onPress={() => {
+            router.push("/home/DoctorList");
+          }}
+          style={tw`py-5`}
+        />
+      </View>
+    </ScrollView>
   );
 }
-

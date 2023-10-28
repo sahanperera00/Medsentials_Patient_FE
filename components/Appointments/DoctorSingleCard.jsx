@@ -9,25 +9,22 @@ const DoctorCard = ({ data, handleNavigate }) => {
       onPress={() => handleNavigate(data._id)}
     >
       <Image
-        source={require('../../assets/images/doctor_6805035.png')}
+        source={require("../../assets/images/doctor_6805035.png")}
         style={styles.doctorImage}
       />
       <View style={styles.textContainer}>
         <Text style={styles.jobName} numberOfLines={1}>
           {data?.name}
         </Text>
-        
+
         <Text style={[tw`text-sm capitalize`, { marginBottom: 6 }]}>
           {data?.specialization}
         </Text>
-        
-        <Text style={tw`text-sm text-gray-400`}>
-          {data?.location}
-        </Text>
+
+        <Text style={tw`text-sm text-gray-400`}>{data?.location}</Text>
       </View>
     </TouchableOpacity>
   );
 };
 
 export default DoctorCard;
-
